@@ -2,6 +2,7 @@
   "expo": {
     "name": "instatwitter-native",
     "slug": "instatwitter-native",
+    "scheme": "instatwitter-native",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,6 +25,9 @@
       },
       "package": "com.wisechimp.instatwitter_native",
       "versionCode": 1
-    }
+    }, 
+    "plugins": [
+      "expo-router"
+    ]
   }
 }

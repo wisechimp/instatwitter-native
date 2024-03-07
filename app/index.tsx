@@ -2,10 +2,10 @@ import { useEffect, useState } from "react"
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
 
-import TwittCardList from "./src/components/twittCardList/TwittCardList"
-import fetchTwitts from "./src/database/queries/fetchTwitts"
+import TwittCardList from "../src/components/twittCardList/TwittCardList"
+import fetchTwitts from "../src/database/queries/fetchTwitts"
 
-export default function App() {
+const Home = () => {
   const [twittData, setTwittData] = useState()
   const [isLoading, setIsLoading] = useState(true)
 
@@ -43,3 +43,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 })
+
+export default Home
