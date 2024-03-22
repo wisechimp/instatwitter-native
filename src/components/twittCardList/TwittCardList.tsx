@@ -7,7 +7,6 @@ type TwittCardListProps = {
 }
 
 const TwittCardList = ({ twittData }: TwittCardListProps) => {
-  console.log(twittData)
   return(
   <FlatList data={twittData} renderItem={({ item: twitt }) => (
     <TwittCard data={twitt} />

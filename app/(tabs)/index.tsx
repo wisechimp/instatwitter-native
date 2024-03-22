@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react"
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native"
-import { SafeAreaView } from "react-native-safe-area-context"
 
-import TwittCardList from "../src/components/twittCardList/TwittCardList"
-import fetchTwitts from "../src/database/queries/fetchTwitts"
+import TwittCardList from "../../src/components/twittCardList/TwittCardList"
+import fetchTwitts from "../../src/database/queries/fetchTwitts"
 
 const Home = () => {
   const [twittData, setTwittData] = useState()
@@ -22,26 +21,31 @@ const Home = () => {
   }, [])
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       {isLoading ? (
         <View>
-          <ActivityIndicator size='large' />
-          <Text>Loading...</Text>
+          <ActivityIndicator size='large' color='#03125f' />
+          <Text style={styles.loadingText}>Loading...</Text>
         </View>
       ) : (
         <TwittCardList twittData={twittData} />
       )}
-    </SafeAreaView>
+    </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#9bc3fd",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "center"
   },
+  loadingText: {
+    color: "#03125f",
+    fontSize: 24,
+    marginTop: 24
+  }
 })
 
 export default Home
